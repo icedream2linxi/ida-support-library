@@ -2,11 +2,8 @@
 #pragma once
 
 #include <Windows.h>
-#include <QtWidgets/QDialog>
 
-// The default macro creates unnecessary instanced conversion code
-#undef QStringLiteral
-#define QStringLiteral(_str) _str
+#include <QtWidgets/QDialog>
 #include "ui_SegmentDialog.h"
 
 #define USE_DANGEROUS_FUNCTIONS
@@ -14,12 +11,12 @@
 #include <idp.hpp>
 #include "SegSelect.h"
 
-class SegmentDialog : public QDialog, public Ui::Dialog
+class SegmentDialog : public QDialog, public Ui::SegSelectDialog
 {
     Q_OBJECT
 public:
     SegmentDialog(QWidget *parent, UINT flags, LPCSTR title, LPCSTR styleSheet, LPCSTR icon);
-	virtual ~SegmentDialog() { Q_CLEANUP_RESOURCE(QtResource); }
+	virtual ~SegmentDialog() { Q_CLEANUP_RESOURCE(SegSelectRes);  }
     void saveGeometry() { geom = geometry(); }
     SegSelect::segments *getSelected();
 

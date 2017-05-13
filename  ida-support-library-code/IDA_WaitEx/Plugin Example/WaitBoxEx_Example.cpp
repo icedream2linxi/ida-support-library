@@ -141,7 +141,7 @@ void idaapi run(int arg)
     WaitBox::hide();
 
     /*
-    // IDA's wait box
+    // IDA's built-in wait box
     msg("IDA wait box.\n");    
     show_wait_box("Please wait..");
     for (int i = 0; i < 100; i++)
@@ -158,7 +158,7 @@ void idaapi run(int arg)
     hide_wait_box();   
     */
 
-    msg("That's it for the WaitEx examples folks!\n\n");
+    msg("That's it for the WaitEx examples.\n\n");
 }
 
 int idaapi init()

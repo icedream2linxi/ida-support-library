@@ -33,10 +33,11 @@ inline BOOL hasUniqueName(ea_t ea) { return(has_name(get_flags_novalue(ea))); }
 inline BOOL isString(ea_t ea){ return(isASCII(get_flags_novalue(ea))); }
 
 // Get string type by address
+// Should process the result with "get_str_type_code()" to filter any 
+// potential string encoding from the base type.
 inline int getStringType(ea_t ea)
 {
-    opinfo_t oi;
-    int strtype = ASCSTR_C;
+    opinfo_t oi;   
     if (get_opinfo(ea, 0, get_flags_novalue(ea), &oi))
         return(oi.strtype);
     else
