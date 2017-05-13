@@ -2,7 +2,7 @@
 // SegSelect: IDA Pro Qt multi-segment select dialog
 // By Sirmabus 2015
 // Docs: http://www.macromonkey.com/ida-waitboxex/
-// License: Qt 5.4.1 LGPL
+// License: Qt LGPL
 #define WIN32_LEAN_AND_MEAN
 #define WINVER       0x0601 // _WIN32_WINNT_WIN7
 #define _WIN32_WINNT 0x0601
@@ -11,6 +11,9 @@
 #include <stdlib.h>
 #include <exception>
 
+#define QT_NO_STATUSTIP
+#define QT_NO_WHATSTHIS
+#define QT_NO_ACCESSIBILITY
 #include <QtCore/QTextStream>
 #include <QtCore/QFile>
 #include <QtWidgets/QApplication>
@@ -31,14 +34,22 @@
 #define MYCATCH() catch (...) { msg("** Exception @ SegSelect in method: %s()! ***\n", __FUNCTION__); }
 #define SIZESTR(x) (sizeof(x) - 1)
 
+// QT_NO_UNICODE_LITERAL must be defined (best in preprocessor setting)
+// So Qt doesn't a static string pool that will cause IDA to crash on unload
+#ifndef QT_NO_UNICODE_LITERAL
+# error QT_NO_UNICODE_LITERAL must be defined to avoid Qt string crashes
+#endif
+
 QRect SegmentDialog::geom;
 
 SegmentDialog::SegmentDialog(QWidget *parent, UINT flags, LPCSTR title, LPCSTR styleSheet, LPCSTR icon) : QDialog(parent)
 {
     // Required for static library resources
-    Q_INIT_RESOURCE(QtResource);
+    Q_INIT_RESOURCE(SegSelectRes);
 
     setupUi(this);
+	buttonBox->addButton("CONTINUE", QDialogButtonBox::AcceptRole);
+	buttonBox->addButton("CANCEL", QDialogButtonBox::RejectRole);
     setWindowTitle(title);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     if (icon && icon[0])
@@ -249,7 +260,7 @@ SegSelect::segments* __cdecl SegSelect::select(UINT flags, LPCSTR title, LPCSTR 
 {  
 	SegSelect::segments *result = NULL;
     try
-    {
+    {		
         SegmentDialog *dlg = new SegmentDialog(QApplication::activeWindow(), flags, title, styleSheet, icon);
         if (dlg->exec())
         {

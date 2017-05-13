@@ -24,7 +24,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_Dialog
+class Ui_SegSelectDialog
 {
 public:
     QVBoxLayout *verticalLayout;
@@ -36,32 +36,32 @@ public:
     QSpacerItem *horizontalSpacer;
     QDialogButtonBox *buttonBox;
 
-    void setupUi(QDialog *Dialog)
+    void setupUi(QDialog *SegSelectDialog)
     {
-        if (Dialog->objectName().isEmpty())
-            Dialog->setObjectName(QStringLiteral("Dialog"));
-        Dialog->setWindowModality(Qt::WindowModal);
-        Dialog->resize(588, 204);
+        if (SegSelectDialog->objectName().isEmpty())
+            SegSelectDialog->setObjectName(QStringLiteral("SegSelectDialog"));
+        SegSelectDialog->setWindowModality(Qt::WindowModal);
+        SegSelectDialog->resize(588, 204);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(Dialog->sizePolicy().hasHeightForWidth());
-        Dialog->setSizePolicy(sizePolicy);
-        Dialog->setMinimumSize(QSize(400, 120));
-        Dialog->setSizeIncrement(QSize(0, 0));
-        Dialog->setBaseSize(QSize(0, 0));
+        sizePolicy.setHeightForWidth(SegSelectDialog->sizePolicy().hasHeightForWidth());
+        SegSelectDialog->setSizePolicy(sizePolicy);
+        SegSelectDialog->setMinimumSize(QSize(400, 120));
+        SegSelectDialog->setSizeIncrement(QSize(0, 0));
+        SegSelectDialog->setBaseSize(QSize(0, 0));
         QFont font;
         font.setFamily(QStringLiteral("Tahoma"));
-        Dialog->setFont(font);
-        Dialog->setWindowTitle(QStringLiteral(""));
-        Dialog->setSizeGripEnabled(true);
-        Dialog->setModal(true);
-        verticalLayout = new QVBoxLayout(Dialog);
+        SegSelectDialog->setFont(font);
+        SegSelectDialog->setWindowTitle(QStringLiteral(""));
+        SegSelectDialog->setSizeGripEnabled(true);
+        SegSelectDialog->setModal(true);
+        verticalLayout = new QVBoxLayout(SegSelectDialog);
         verticalLayout->setSpacing(5);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
         verticalLayout->setContentsMargins(0, 0, 0, 9);
-        topFrame = new QFrame(Dialog);
+        topFrame = new QFrame(SegSelectDialog);
         topFrame->setObjectName(QStringLiteral("topFrame"));
         QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy1.setHorizontalStretch(0);
@@ -72,8 +72,8 @@ public:
         topFrame->setFrameShadow(QFrame::Raised);
         horizontalLayout_2 = new QHBoxLayout(topFrame);
         horizontalLayout_2->setSpacing(0);
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         segmentTable = new QTableWidget(topFrame);
         if (segmentTable->columnCount() < 6)
             segmentTable->setColumnCount(6);
@@ -115,7 +115,7 @@ public:
         segmentTable->setSizePolicy(sizePolicy1);
         segmentTable->setMaximumSize(QSize(16777215, 16777215));
         QFont font2;
-        font2.setFamily(QStringLiteral("Lucida Console"));
+        font2.setFamily(QStringLiteral("Noto Sans"));
         font2.setPointSize(8);
         segmentTable->setFont(font2);
 #ifndef QT_NO_TOOLTIP
@@ -142,7 +142,7 @@ public:
 
         verticalLayout->addWidget(topFrame);
 
-        bottomFrame = new QFrame(Dialog);
+        bottomFrame = new QFrame(SegSelectDialog);
         bottomFrame->setObjectName(QStringLiteral("bottomFrame"));
         QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy2.setHorizontalStretch(0);
@@ -166,8 +166,14 @@ public:
         sizePolicy3.setVerticalStretch(0);
         sizePolicy3.setHeightForWidth(buttonBox->sizePolicy().hasHeightForWidth());
         buttonBox->setSizePolicy(sizePolicy3);
+        buttonBox->setMinimumSize(QSize(0, 26));
+        buttonBox->setMaximumSize(QSize(16777215, 26));
+        QFont font3;
+        font3.setFamily(QStringLiteral("Noto Sans"));
+        font3.setPointSize(10);
+        buttonBox->setFont(font3);
         buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
+        buttonBox->setStandardButtons(QDialogButtonBox::NoButton);
         buttonBox->setCenterButtons(false);
 
         horizontalLayout->addWidget(buttonBox);
@@ -176,22 +182,22 @@ public:
         verticalLayout->addWidget(bottomFrame);
 
 
-        retranslateUi(Dialog);
-        QObject::connect(buttonBox, SIGNAL(accepted()), Dialog, SLOT(accept()));
-        QObject::connect(buttonBox, SIGNAL(rejected()), Dialog, SLOT(reject()));
+        retranslateUi(SegSelectDialog);
+        QObject::connect(buttonBox, SIGNAL(accepted()), SegSelectDialog, SLOT(accept()));
+        QObject::connect(buttonBox, SIGNAL(rejected()), SegSelectDialog, SLOT(reject()));
 
-        QMetaObject::connectSlotsByName(Dialog);
+        QMetaObject::connectSlotsByName(SegSelectDialog);
     } // setupUi
 
-    void retranslateUi(QDialog *Dialog)
+    void retranslateUi(QDialog *SegSelectDialog)
     {
-        Q_UNUSED(Dialog);
+        Q_UNUSED(SegSelectDialog);
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class Dialog: public Ui_Dialog {};
+    class SegSelectDialog: public Ui_SegSelectDialog {};
 } // namespace Ui
 
 QT_END_NAMESPACE

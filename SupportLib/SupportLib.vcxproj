@@ -113,6 +113,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="Utility.cpp" />
   </ItemGroup>
   <ItemGroup>

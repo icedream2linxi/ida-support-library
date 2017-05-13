@@ -29,18 +29,18 @@
 // Get floating elapsed seconds
 TIMESTAMP getTimeStamp()
 {
-	LARGE_INTEGER tLarge;
-	QueryPerformanceCounter(&tLarge);
+	LARGE_INTEGER large;
+	QueryPerformanceCounter(&large);
 
-	static ALIGN(16) TIMESTAMP s_ClockFreq;
-	if(s_ClockFreq == 0.0)
+	static ALIGN(16) TIMESTAMP clockFreq = 0;
+	if(clockFreq == 0)
 	{
-		LARGE_INTEGER tLarge;
-		QueryPerformanceFrequency(&tLarge);
-		s_ClockFreq = (TIMESTAMP) tLarge.QuadPart;
+		LARGE_INTEGER large2;
+		QueryPerformanceFrequency(&large2);
+		clockFreq = (TIMESTAMP) large2.QuadPart;
 	}
 
-	return((TIMESTAMP) tLarge.QuadPart / s_ClockFreq);
+	return((TIMESTAMP) large.QuadPart / clockFreq);
 }
 
 // Get lower precision elapsed seconds
@@ -50,7 +50,7 @@ TIMESTAMP getTimeStampLow()
     return((TIMESTAMP)GetTickCount64() / (TIMESTAMP) 1000.0);
 }
 
-// Return a pretty comma formatted string for a given unsigned number
+// Return a pretty comma formatted string for a given unsigned 64bit number number
 LPSTR prettyNumberString(UINT64 n, __bcount(32) LPSTR buffer)
 {
     std::string s;
@@ -212,7 +212,7 @@ LPSTR replaceExtInPath(__inout_bcount(MAX_PATH) LPSTR path, __in LPSTR pathNew)
 
 // ================================================================================================
 // From IDA SDK "bytes.hpp"
-// Says in there we're not supposed to use these internal defs. To use the accessors like
+// Comments say we're not supposed to use these internal defs. To use the accessors like
 // isByte(), byteflag(), etc. But then these haven't changed since at least 5.8'ish and it's
 // so musch easier this way.
 #define DT_TYPE     0xF0000000L         // Mask for DATA typing
@@ -426,4 +426,3 @@ void dumpFlags(ea_t ea, BOOL withValue)
     idaFlags2String(getFlags(ea), s, withValue);
     msg(EAFORMAT " Flags: %s\n", ea, s.c_str());
 }
-

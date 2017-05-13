@@ -49,6 +49,12 @@ static MyQProgressDialog *prgDlg = NULL;
 #undef MYCATCH
 #define MYCATCH() catch (...) { msg("** Exception in WaitBoxEx method: %s()! ***\n", __FUNCTION__); }
 
+// QT_NO_UNICODE_LITERAL must be defined (best in preprocessor setting)
+// So Qt doesn't a static string pool that will cause IDA to crash on unload
+#ifndef QT_NO_UNICODE_LITERAL
+# error QT_NO_UNICODE_LITERAL must be defined to avoid Qt string crashes
+#endif
+
 static HWND WINAPI getIdaHwnd(){ return((HWND)callui(ui_get_hwnd).vptr); }
 static void CALLBACK timerTick(PVOID lpParam, BOOLEAN TimerOrWaitFired) 
 { 
@@ -138,7 +144,7 @@ m_hMouseHook(NULL), m_hWinHook(NULL), m_hTimerQueue(NULL), m_hUpdateTimer(NULL)
 
     // Optionally set titlebar icon
     if (icon && icon[0])
-        setWindowIcon(QIcon(icon));   
+        setWindowIcon(QIcon(icon));
 
     // Progress 0 for the control to setup internally
     setValue(0);

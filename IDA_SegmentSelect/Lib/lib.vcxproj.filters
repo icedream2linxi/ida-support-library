@@ -20,9 +20,6 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="Resources">
-      <UniqueIdentifier>{26fe2b90-a029-498a-b70a-6641c63d3840}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Generated Files\ReleaseEA64">
       <UniqueIdentifier>{61b08b80-e47d-408a-b488-4c887256b386}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
@@ -33,21 +30,23 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="SegmentDialog.h" />
     <CustomBuild Include="SegmentDialog.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="QtResource.qrc">
-      <Filter>Resources</Filter>
+    <CustomBuild Include="SegSelectRes.qrc">
+      <Filter>Resource Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SegSelect.cpp" />
-    <ClCompile Include="GeneratedFiles\qrc_QtResource.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\ReleaseEA64\moc_SegmentDialog.cpp">
       <Filter>Generated Files\ReleaseEA64</Filter>
     </ClCompile>
@@ -60,11 +59,31 @@
     <ClCompile Include="GeneratedFiles\Release\moc_SegmentDialog.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_SegSelectRes.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_SegmentDialog.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="SegSelect.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="code_seg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="data_seg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="extrn_seg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="idaq_seg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="other_seg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
