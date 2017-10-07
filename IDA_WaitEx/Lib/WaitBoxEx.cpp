@@ -55,7 +55,11 @@ static MyQProgressDialog *prgDlg = NULL;
 # error QT_NO_UNICODE_LITERAL must be defined to avoid Qt string crashes
 #endif
 
-static HWND WINAPI getIdaHwnd(){ return((HWND)callui(ui_get_hwnd).vptr); }
+static HWND WINAPI getIdaHwnd(){
+	//return((HWND)callui(ui_get_hwnd).vptr);
+	QWidget *topWidget = QApplication::topLevelAt(((QWidget*)get_current_widget())->mapToGlobal(QPoint()));
+	return (HWND)topWidget->winId();
+}
 static void CALLBACK timerTick(PVOID lpParam, BOOLEAN TimerOrWaitFired) 
 { 
     isUpdateReady = TRUE;    

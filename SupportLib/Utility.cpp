@@ -162,9 +162,9 @@ void trace(const char *format, ...)
 void getDisasmText(ea_t ea, qstring &s)
 {
     s.clear();
-    char buffer[MAXSTR]; buffer[0] = buffer[SIZESTR(buffer)] = 0;
-    if (generate_disasm_line(ea, buffer, SIZESTR(buffer)))
-        tag_remove(buffer, buffer, SIZESTR(buffer));
+    qstring buffer;
+    if (generate_disasm_line(&buffer, ea))
+        tag_remove(&buffer, buffer);
     s = buffer;
 }
 
@@ -297,7 +297,7 @@ void idaFlags2String(flags_t f, __out qstring &s, BOOL withValue)
 
 	// F0000000
 	BOOL first = TRUE;
-	if(isData(f))
+	if(is_data(f))
 	{
 		switch(f & DT_TYPE)
 		{
@@ -319,7 +319,7 @@ void idaFlags2String(flags_t f, __out qstring &s, BOOL withValue)
 		first = FALSE;
 	}
 	else
-	if(isCode(f))
+	if(is_code(f))
 	{
 		if(f & MS_CODE)
 		{
@@ -423,6 +423,6 @@ void idaFlags2String(flags_t f, __out qstring &s, BOOL withValue)
 void dumpFlags(ea_t ea, BOOL withValue)
 {
     qstring s;
-    idaFlags2String(getFlags(ea), s, withValue);
+    idaFlags2String(get_full_flags(ea), s, withValue);
     msg(EAFORMAT " Flags: %s\n", ea, s.c_str());
 }

@@ -27,10 +27,10 @@ long fsize(FILE *fp);
 LPSTR replaceExtInPath(__inout_bcount(MAX_PATH) LPSTR path, __in LPSTR pathNew);
 
 // Returns TRUE if there is a name at address that is unique (I.E. user, or from PDB, etc., and not IDA auto-generated)
-inline BOOL hasUniqueName(ea_t ea) { return(has_name(get_flags_novalue(ea))); }
+inline BOOL hasUniqueName(ea_t ea) { return(has_name(get_flags(ea))); }
 
 // Return TRUE if at address is a string (ASCII, Unicode, etc.)
-inline BOOL isString(ea_t ea){ return(isASCII(get_flags_novalue(ea))); }
+inline BOOL isString(ea_t ea){ return(is_strlit(get_flags(ea))); }
 
 // Get string type by address
 // Should process the result with "get_str_type_code()" to filter any 
@@ -38,10 +38,10 @@ inline BOOL isString(ea_t ea){ return(isASCII(get_flags_novalue(ea))); }
 inline int getStringType(ea_t ea)
 {
     opinfo_t oi;   
-    if (get_opinfo(ea, 0, get_flags_novalue(ea), &oi))
+    if (get_opinfo(&oi, ea, 0, get_flags(ea)))
         return(oi.strtype);
     else
-        return(ASCSTR_C);
+        return(0);
 }
 
 

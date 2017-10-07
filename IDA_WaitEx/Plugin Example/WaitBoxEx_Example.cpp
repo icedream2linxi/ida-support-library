@@ -15,7 +15,7 @@
 #define TEST_TIME_MS (6 * 1000)
 #define refreshIda() WaitBox::processIdaEvents()
 
-void idaapi run(int arg)
+bool idaapi run(size_t arg)
 {      
     /* 
         It should take about two seconds for the boxes to show up.
@@ -159,6 +159,8 @@ void idaapi run(int arg)
     */
 
     msg("That's it for the WaitEx examples.\n\n");
+
+	return true;
 }
 
 int idaapi init()

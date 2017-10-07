@@ -1,0 +1,9 @@
+.vs/
+Release/
+Debug/
+x64/
+MDS Debug/
+MDS Release/
+DebugEA64/
+ReleaseEA64/
+*.db

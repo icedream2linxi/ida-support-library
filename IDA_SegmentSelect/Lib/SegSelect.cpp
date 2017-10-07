@@ -66,9 +66,9 @@ SegmentDialog::SegmentDialog(QWidget *parent, UINT flags, LPCSTR title, LPCSTR s
         {
             segment_t *seg = getnseg(i);
             char buffer[32];
-            int len = strlen(_ui64toa((UINT64)seg->startEA, buffer, 16));
+            int len = strlen(_ui64toa((UINT64)seg->start_ea, buffer, 16));
             if (len > biggestStart) biggestStart = len;
-            len = strlen(_ui64toa((UINT64)seg->endEA, buffer, 16));
+            len = strlen(_ui64toa((UINT64)seg->end_ea, buffer, 16));
             if (len > biggestEnd) biggestEnd = len;
             len = strlen(_ui64toa((UINT64)seg->size(), buffer, 16));
             if (len > biggestSize) biggestSize = len;
@@ -102,10 +102,10 @@ SegmentDialog::SegmentDialog(QWidget *parent, UINT flags, LPCSTR title, LPCSTR s
         {
             // Name w/checkbox
             segment_t *seg = getnseg(i);
-            char buffer[100];
-            if (get_true_segm_name(seg, buffer, (sizeof(buffer) - 16)) <= 0)
-                strcpy(buffer, "none");
-            QTableWidgetItem *item = new QTableWidgetItem(buffer);
+            qstring buffer;
+            if (get_segm_name(&buffer, seg) <= 0)
+                buffer = "none";
+            QTableWidgetItem *item = new QTableWidgetItem(buffer.c_str());
             LPCSTR iconFile;
             BOOL checked = FALSE;
             switch (seg->type)
@@ -128,7 +128,7 @@ SegmentDialog::SegmentDialog(QWidget *parent, UINT flags, LPCSTR title, LPCSTR s
                 {
                     iconFile = ":/seglib/data_seg.png";
 
-                    if ((flags & SegSelect::RDATA_HINT) && (strcmp(buffer, ".rdata") == 0))
+                    if ((flags & SegSelect::RDATA_HINT) && (strcmp(buffer.c_str(), ".rdata") == 0))
                         checked = TRUE;
                     else
                     if (flags & SegSelect::DATA_HINT)
@@ -143,7 +143,7 @@ SegmentDialog::SegmentDialog(QWidget *parent, UINT flags, LPCSTR title, LPCSTR s
                         int j = 0;
                         for (; j < FILTERED; j++)
                         {
-                            if (strcmp(buffer, filter[j]) == 0)
+                            if (strcmp(buffer.c_str(), filter[j]) == 0)
                                 break;
 
                         }
@@ -185,19 +185,19 @@ SegmentDialog::SegmentDialog(QWidget *parent, UINT flags, LPCSTR title, LPCSTR s
                 segmentTable->setItem(i, TYPE, new QTableWidgetItem("???"));
 
             // Flags "RWE"
-            strcpy(buffer, "[...]");
+            buffer = "[...]";
             if (seg->perm & SEGPERM_READ)  buffer[1] = 'R';
             if (seg->perm & SEGPERM_WRITE) buffer[2] = 'W';
             if (seg->perm & SEGPERM_EXEC)  buffer[3] = 'E';
-            segmentTable->setItem(i, FLAGS, new QTableWidgetItem(buffer));
+            segmentTable->setItem(i, FLAGS, new QTableWidgetItem(buffer.c_str()));
 
             // Start - End, Size
-            sprintf(buffer, startFormat, seg->startEA);
-            segmentTable->setItem(i, START, new QTableWidgetItem(buffer));
-            sprintf(buffer, endFormat, seg->endEA);
-            segmentTable->setItem(i, END, new QTableWidgetItem(buffer));
-            sprintf(buffer, sizeFormat, seg->size());
-            segmentTable->setItem(i, SIZE, new QTableWidgetItem(buffer));
+            buffer.sprnt(startFormat, seg->start_ea);
+            segmentTable->setItem(i, START, new QTableWidgetItem(buffer.c_str()));
+			buffer.sprnt(endFormat, seg->end_ea);
+            segmentTable->setItem(i, END, new QTableWidgetItem(buffer.c_str()));
+			buffer.sprnt(sizeFormat, seg->size());
+            segmentTable->setItem(i, SIZE, new QTableWidgetItem(buffer.c_str()));
 
             //segmentTable->verticalHeader()->resizeSection(i, ROW_HEIGHT);
         }
