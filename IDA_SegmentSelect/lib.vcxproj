@@ -150,13 +150,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEA64|Win32'">
     <TargetName>SegSelectEA64D</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\Debug\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEA64|x64'">
     <TargetName>SegSelectEA64D</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\Debug\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>SegSelect</TargetName>
@@ -172,13 +174,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEA64|Win32'">
     <TargetName>SegSelectEA64</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\Release\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEA64|x64'">
     <TargetName>SegSelectEA64</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\Release\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
