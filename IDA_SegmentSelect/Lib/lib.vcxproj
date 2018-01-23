@@ -38,6 +38,7 @@
     <ProjectGuid>{DEADBEEF-CAFE-F00D-FEED-C0FFEEC0FFEE}</ProjectGuid>
     <Keyword>Qt4VSv1.0</Keyword>
     <ProjectName>SegmentSelect</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -134,20 +135,18 @@
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseEA64|Win32'" />
     <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseEA64|x64'" />
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Lib\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugEA64|Win32'">$(SolutionDir)Lib\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Lib\$(Configuration)\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseEA64|Win32'">$(SolutionDir)Lib\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>SegSelectD</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>SegSelectD</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugEA64|Win32'">
     <TargetName>SegSelectEA64D</TargetName>
@@ -161,13 +160,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>SegSelect</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>SegSelect</TargetName>
-    <TargetExt>.LiB</TargetExt>
     <GenerateManifest>false</GenerateManifest>
+    <OutDir>$(SolutionDir)lib\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEA64|Win32'">
     <TargetName>SegSelectEA64</TargetName>
@@ -194,11 +195,7 @@
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to soultion folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
@@ -218,11 +215,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to soultion folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugEA64|Win32'">
@@ -240,11 +233,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to soultion folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
@@ -264,11 +253,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <OutputFile>$(OutDir)$(TargetFileName)</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to soultion folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -295,11 +280,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to solution folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
@@ -328,11 +309,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to solution folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseEA64|Win32'">
@@ -359,11 +336,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to solution folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib>
       <TargetMachine>MachineX86</TargetMachine>
     </Lib>
@@ -392,11 +365,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
     </Link>
-    <PostBuildEvent>
-      <Command>copy SegSelect.h "$(SolutionDir)"
-copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
-      <Message>Copy to solution folder</Message>
-    </PostBuildEvent>
+    <PostBuildEvent />
     <Lib />
   </ItemDefinitionGroup>
   <ItemGroup>

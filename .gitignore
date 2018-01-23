@@ -6,4 +6,8 @@ MDS Debug/
 MDS Release/
 DebugEA64/
 ReleaseEA64/
+obj/
+lib/
 *.db
+*.lib
+*.opendb
