@@ -35,8 +35,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>Library</ProjectName>
-    <ProjectGuid>{22222222-2222-2222-2222-222222222222}</ProjectGuid>
+    <ProjectName>WaitEx</ProjectName>
+    <ProjectGuid>{2B11CBC0-3D63-4D18-B5DD-93AA3C7C677C}</ProjectGuid>
     <RootNamespace>WaitExLib</RootNamespace>
     <Keyword>Qt4VSv1.0</Keyword>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -176,7 +176,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -203,7 +203,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;__X64__;_DEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Async</ExceptionHandling>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -229,7 +229,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MDS Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;MATERIAL_DESIGN_STYLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -256,7 +256,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MDS Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;__X64__;_DEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;MATERIAL_DESIGN_STYLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ExceptionHandling>Async</ExceptionHandling>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -285,7 +285,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NO_DEBUG;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -318,7 +318,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;__X64__;NDEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NO_DEBUG;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -351,7 +351,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NO_DEBUG;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;MATERIAL_DESIGN_STYLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -384,7 +384,7 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;.\GeneratedFiles;.\GeneratedFiles\$(ConfigurationName);$(IDADIR)\idasdk70\include;$(QTDIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;__X64__;NDEBUG;_WINDOWS;_LIB;__NT__;__IDP__;__VC__;NO_OBSOLETE_FUNCS;QT_NO_DEBUG;QT_NAMESPACE=QT;QT_NO_UNICODE_LITERAL;_CRT_SECURE_NO_WARNINGS;MATERIAL_DESIGN_STYLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -580,10 +580,10 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MDS Debug|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MDS Debug|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Debug|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -D_DEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing MyQProgressDialog.h...</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Moc%27ing MyQProgressDialog.h...</Message>
       <Message Condition="'$(Configuration)|$(Platform)'=='MDS Release|Win32'">Moc%27ing MyQProgressDialog.h...</Message>
@@ -592,10 +592,10 @@ copy "$(OutDir)$(TargetFileName)" "$(SolutionDir)"</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MDS Release|Win32'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MDS Release|x64'">.\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MDS Release|x64'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o ".\GeneratedFiles\$(ConfigurationName)\moc_%(Filename).cpp"  -DWIN32 -DNDEBUG -D_WINDOWS -D_LIB -D__NT__ -D__IDP__ -D__VC__ -DNO_OBSOLETE_FUNCS -DQT_NO_DEBUG -DQT_NAMESPACE=QT -DQT_NO_UNICODE_LITERAL -D_CRT_SECURE_NO_WARNINGS -DMATERIAL_DESIGN_STYLE  "-I." "-I.\GeneratedFiles" "-I.\GeneratedFiles\$(ConfigurationName)\." "-I$(IDADIR)\idasdk70\include" "-I$(QTDIR)\include"</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MDS Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>

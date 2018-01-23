@@ -19,7 +19,7 @@
 #include <typeinf.hpp>
 #pragma warning(pop)
 
-#include <Utility.h>
+#include "Utility.h"
 #include <string>
 
 #pragma comment(lib, "ida.lib")
