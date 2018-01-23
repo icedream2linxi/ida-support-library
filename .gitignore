@@ -6,6 +6,7 @@ MDS Debug/
 MDS Release/
 DebugEA64/
 ReleaseEA64/
+GeneratedFiles/
 obj/
 lib/
 *.db
